@@ -3,10 +3,13 @@
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Tests](https://github.com/lossfunk/esolang-bench/actions/workflows/test.yml/badge.svg)](https://github.com/lossfunk/esolang-bench/actions)
+[![Dataset](https://img.shields.io/badge/🤗%20Dataset-arcAman07%2FEsolang--Bench-blue)](https://huggingface.co/datasets/arcAman07/Esolang-Bench)
 
 **Evaluating Genuine Reasoning in Large Language Models via Esoteric Programming Languages**
 
-EsoLang-Bench is a benchmark that tests frontier LLMs on code generation in esoteric programming languages: **Brainfuck**, **Befunge-98**, **Whitespace**, **Unlambda**, **Shakespeare**, **Piet**, and **Thue**. These languages have 5,000x--100,000x less training data than Python, exposing whether models can genuinely reason about novel computational paradigms or merely pattern-match from memorized code.
+EsoLang-Bench is a benchmark that tests frontier LLMs on code generation in esoteric programming languages: **Brainfuck**, **Befunge-98**, **Whitespace**, **Unlambda**, **Shakespeare**, **Piet**, and **Thue**. These languages have 1,000x–100,000x fewer public repositories than Python (based on GitHub search counts), exposing whether models can genuinely reason about novel computational paradigms or merely pattern-match from memorized code.
+
+📦 **Dataset:** [huggingface.co/datasets/arcAman07/Esolang-Bench](https://huggingface.co/datasets/arcAman07/Esolang-Bench)
 
 ## Key Finding
 
@@ -30,6 +33,23 @@ pip install -e ".[benchmark]"
 
 ```bash
 pip install -e ".[benchmark,dev]"
+```
+
+## Dataset
+
+The benchmark dataset (80 problems × 4 difficulty tiers) is available on Hugging Face:
+
+```python
+from datasets import load_dataset
+
+ds       = load_dataset("arcAman07/Esolang-Bench")               # all 80 problems
+ds_easy  = load_dataset("arcAman07/Esolang-Bench", "easy")       # 20 Easy
+ds_med   = load_dataset("arcAman07/Esolang-Bench", "medium")     # 20 Medium
+ds_hard  = load_dataset("arcAman07/Esolang-Bench", "hard")       # 20 Hard
+ds_xhard = load_dataset("arcAman07/Esolang-Bench", "extra_hard") # 20 Extra-Hard
+
+# Each row: id, difficulty, title, description, test_cases (list of 6 {input, output} dicts)
+print(ds["test"][0])
 ```
 
 ## Quick Start
