@@ -1,5 +1,6 @@
 # EsoLang-Bench
 
+[![arXiv](https://img.shields.io/badge/arXiv-2603.09678-b31b1b.svg)](https://arxiv.org/abs/2603.09678)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Tests](https://github.com/Lossfunk/EsolangBench/actions/workflows/test.yml/badge.svg)](https://github.com/Lossfunk/EsolangBench/actions)
@@ -7,9 +8,10 @@
 
 **Evaluating Genuine Reasoning in Large Language Models via Esoteric Programming Languages**
 
-EsoLang-Bench is a benchmark that tests frontier LLMs on code generation in esoteric programming languages: **Brainfuck**, **Befunge-98**, **Whitespace**, **Unlambda**, and **Shakespeare**. These languages have 1,000x–100,000x fewer public repositories than Python (based on GitHub search counts), exposing whether models can genuinely reason about novel computational paradigms or merely pattern-match from memorized code.
-
+📄 **Paper:** [arxiv.org/abs/2603.09678](https://arxiv.org/abs/2603.09678)
 📦 **Dataset:** [huggingface.co/datasets/arcAman07/Esolang-Bench](https://huggingface.co/datasets/arcAman07/Esolang-Bench)
+
+EsoLang-Bench is a benchmark that tests frontier LLMs on code generation in esoteric programming languages: **Brainfuck**, **Befunge-98**, **Whitespace**, **Unlambda**, and **Shakespeare**. These languages have 1,000x–100,000x fewer public repositories than Python (based on GitHub search counts), exposing whether models can genuinely reason about novel computational paradigms or merely pattern-match from memorized code.
 
 ## Key Finding
 
@@ -188,8 +190,12 @@ pytest tests/ -v
 @article{sharma2026esolangbench,
   title={{EsoLang-Bench}: Evaluating Genuine Reasoning in Large Language Models via Esoteric Programming Languages},
   author={Sharma, Aman and Chopra, Paras},
-  journal={arXiv preprint},
-  year={2026}
+  journal={arXiv preprint arXiv:2603.09678},
+  year={2026},
+  eprint={2603.09678},
+  archivePrefix={arXiv},
+  primaryClass={cs.LG},
+  url={https://arxiv.org/abs/2603.09678}
 }
 ```
 
