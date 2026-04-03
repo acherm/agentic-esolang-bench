@@ -19,6 +19,21 @@ EsoLang-Bench is a benchmark that tests frontier LLMs on code generation in esot
 
 > The best frontier model (GPT-5.2) achieves **3.8%** on EsoLang-Bench vs. **~90%** on equivalent Python tasks -- an **85 percentage point gap** that reveals fundamental limitations in out-of-distribution code reasoning.
 
+## Agentic Brainfuck: 100% (80/80)
+
+Using **Claude Code** (Claude Opus 4.6, agentic mode with 1M context), we solved **all 80 problems** in Brainfuck -- 20 easy, 20 medium, 20 hard, and 20 extra hard -- achieving **100% accuracy**. This is a dramatic improvement over the previous best of 13.8%.
+
+The key to this result is treating Brainfuck as a **compilation target** rather than writing it directly. A Python-based `BFGen` framework generates BF from high-level primitives (cell management, copy, compare, decimal I/O, arithmetic), and each solution is validated against the local interpreter before submission. The agentic loop handles debugging, retrying, and iterating until all test cases pass.
+
+All 80 solutions (`.bf` programs + detailed reports) are in [`solutions/brainfuck/`](solutions/brainfuck/).
+
+| Difficulty | Score | Examples |
+|---|---|---|
+| Easy | 20/20 | Hello World, string reversal, arithmetic |
+| Medium | 20/20 | Palindrome check, GCD, Fibonacci, sorting |
+| Hard | 20/20 | Balanced parentheses, big integer addition, prime counting |
+| Extra Hard | 20/20 | Postfix evaluation, matrix multiplication, Roman numeral conversion |
+
 ## Installation
 
 **Basic** (interpreters only):
@@ -144,7 +159,7 @@ Use `--difficulty all` (default) to run all problems.
 
 | Language | Paradigm | GitHub Repos | Best Accuracy |
 |----------|----------|-------------|---------------|
-| Brainfuck | Tape machine | ~5,000 | 13.8% (agentic) |
+| Brainfuck | Tape machine | ~5,000 | **100% (agentic)** |
 | Befunge-98 | 2D grid | ~2,000 | 11.2% |
 | Whitespace | Invisible syntax | ~200 | 0% |
 | Unlambda | Combinators | ~100 | 1.2% |
@@ -161,6 +176,7 @@ Use `--difficulty all` (default) to run all problems.
 | Kimi K2 Thinking | Self-Scaffolding | 0.8% |
 | Codex (Agentic) | -- | 13.8% |
 | Claude Code | -- | 12.5% |
+| **Claude Code (Opus 4.6, 1M, agentic)** | **BF-as-compilation-target** | **100% on Brainfuck** |
 
 ## Project Structure
 
