@@ -55,7 +55,7 @@ print(result.stdout)  # "aaabb"
 
 The original X12 (Least Common Multiple) solution passed the repository's built-in Python `BrainfuckInterpreter` but contained a latent bug that caused an **infinite loop** under standard Brainfuck semantics.
 
-This was discovered by cross-validating all 80 solutions with [Tritium](https://github.com/rdebath/Brainfuck) (rdebath/Brainfuck), a fast, optimizing C interpreter, using 8-bit cells (`-b`), a 30,000-cell tape (`-mem 30000`), and EOF-returns-zero (`-z`). 79 of 80 solutions passed immediately; X12 timed out on all 6 test cases.
+The bug was reported by Jean-Baptiste Döderlein and confirmed by cross-validating all 80 solutions with [Tritium](https://github.com/rdebath/Brainfuck) (rdebath/Brainfuck), a fast, optimizing C interpreter, using 8-bit cells (`-b`), a 30,000-cell tape (`-mem 30000`), and EOF-returns-zero (`-z`). 79 of 80 solutions passed immediately; X12 timed out on all 6 test cases.
 
 ### Root cause
 
