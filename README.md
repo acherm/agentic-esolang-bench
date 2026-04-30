@@ -51,6 +51,19 @@ result = interp.run(code, stdin="a3b2")
 print(result.stdout)  # "aaabb"
 ```
 
+To verify a saved benchmark solution against all 6 official test cases:
+
+```bash
+python scripts/test_solution.py brainfuck H11
+python scripts/test_solution.py brainfuck --all
+```
+
+If the package is installed, the same validator is also available as:
+
+```bash
+esolang-test-solution brainfuck H11
+```
+
 ## Edit: X12 Bug Fix (Tritium Interpreter Validation)
 
 The original X12 (Least Common Multiple) solution passed the repository's built-in Python `BrainfuckInterpreter` but contained a latent bug that caused an **infinite loop** under standard Brainfuck semantics.

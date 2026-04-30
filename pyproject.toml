@@ -27,6 +27,7 @@ dev = ["pytest>=7.4"]
 [project.scripts]
 esolang-interpret = "esolang_bench.interpreters:cli_main"
 esolang-run = "esolang_bench.benchmarking.runner_utils:main"
+esolang-test-solution = "esolang_bench.solution_tester:cli_main"
 
 [project.urls]
 Homepage = "https://github.com/Lossfunk/EsolangBench"
